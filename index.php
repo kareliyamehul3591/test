@@ -1,16 +1,13 @@
 <?php 
-
-//echo date("Y-m-d H:i:s", strtotime("2020-07-01T01:00:00-05:00")) . "\n";
-//echo date("h:i:s a", strtotime("2020-07-01T10:01:00-05:00")) . "\n";
-
+//initalize file 
 $str = file_get_contents('example.json');
 $json = json_decode($str, true);
-//echo '<pre>' . print_r($json, true) . '</pre>';
-
 $new_rray = $json['events'];
 $os = array();
 $osss = array();
 $anything = 0;
+
+//get all customer & check condition
 foreach($new_rray as $key=>$value){
 	
 	if($value['action'] == 'new_customer'){
@@ -81,9 +78,8 @@ foreach($new_rray as $key=>$value){
 		
 	}
 }
-//echo '<pre>' . print_r($os, true) . '</pre>';
-//echo '<pre>' . print_r($osss, true) . '</pre>';
- 
+
+ // count points
 foreach($os as $hfghf){
 	$pointd = 0;
 	$ordercount = 0;
@@ -102,8 +98,8 @@ foreach($os as $hfghf){
 	
 } 
 
-//echo '<pre>' . print_r($arrayhd, true) . '</pre>';
-error_reporting(0);
+
+  // final result
 
  foreach ($arrayhd as $key => $hdjkfd){
 	 
